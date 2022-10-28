@@ -1,0 +1,163 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+li{
+    list-style:none;
+}
+html,body,.wapper{
+    width: 100%;
+    height: 100%;
+    background: #000;
+}
+
+.wapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wapper ul{
+    width: 80%;
+    height: 80%;
+    overflow: hidden;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.wapper ul li{
+    width: 16%;
+    height: 100%;
+    background-color: rgb(107, 104, 104);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    transition: width 0.5s linear, height 0.5s linear 0.5s; 
+}   
+.wapper ul li .sonbag{
+    transform: translateY(100%);
+    border-radius: 20px;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.5;
+    transition: 0.3s;
+}
+.wapper ul li .sonbag .hoverimg{
+    position: absolute;
+    opacity: 0;
+    border-radius: 20px;
+}
+.wapper ul li:nth-of-type(1) .sonbag{
+    background-image: url(../images/1.jpg);
+}
+.wapper ul li:nth-of-type(1) .sonbag{
+    transition-delay: 0s;
+}
+.wapper ul li:nth-of-type(2) .sonbag{
+    background-image: url(../images/2.jpg);
+    transition-delay: 0.1s;
+}
+.wapper ul li:nth-of-type(3) .sonbag{
+    background-image: url(../images/3.jpg);
+    transition-delay: 0.2s;
+}
+.wapper ul li:nth-of-type(4) .sonbag{
+    background-image: url(../images/4.jpg);
+    transition-delay: 0.3s;
+}
+.wapper ul li:nth-of-type(5) .sonbag{
+    background-image: url(../images/5.jpg);
+    transition-delay: 0.4s;
+}
+.wapper ul li:nth-of-type(6) .sonbag{
+    background-image: url(../images/6.jpg);
+    transition-delay: 0.5s;
+}
+.wapper ul li .sonbag .text{ 
+    font-size: 30px;
+    color: #fff;
+    opacity: 1;
+    transition: opacity 0.1s linear 1s;
+  
+}
+.wapper ul li .sonbag:hover .text{
+    font-weight: bold;
+}
+.wapper ul li .sonbag:hover{
+    opacity: 1;
+}
+.wapper ul.active li:not(.active){
+    width:0%;
+    height:0%;
+    opacity: 0;
+    transition:all 0.5s linear;
+}
+.wapper ul li.active .sonbag .hoverimg{
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+}
+.wapper ul.active li .sonbag .text{
+    opacity: 0;
+}
+.wapper ul li.active .sonbag .text{
+    opacity: 0;
+}
+.wapper ul li.active{
+    width: 100%;
+    transition: height 0.5s linear, width 0.5s linear 0.5s; 
+}
+.wapper ul li .sonbag .hoverimg .birdtext,
+.wapper ul li .sonbag .hoverimg .cover
+{   
+   opacity: 0;
+   transition:opacity .3s linear 1s;
+}
+
+
+.wapper ul li.active .sonbag .hoverimg .birdtext{
+    position: absolute;
+    top: 50px;
+    font-size: 30px;
+    color: #fff;
+    left:100px;
+    opacity: 1;
+}
+.wapper ul li.active .sonbag .hoverimg .cover{
+    top: 50px; 
+    right:100px;
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    cursor: pointer;
+    opacity: 1;
+    transition:all 0.3s linear 1s;
+    transform: rotate(450deg);
+   
+}
+.wapper ul li.active .sonbag .hoverimg .cover::before,
+.wapper ul li.active .sonbag .hoverimg .cover::after{
+    top: 12px;
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    content: "";
+    display: inline-block;
+    position: absolute;
+}
+
+.wapper ul li.active .sonbag .hoverimg .cover::before{
+    transform: rotateZ(45deg);
+}
+.wapper ul li.active .sonbag .hoverimg .cover::after{
+    transform: rotateZ(-45deg);
+}
